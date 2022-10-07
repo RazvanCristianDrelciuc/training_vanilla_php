@@ -12,7 +12,9 @@ if(!empty($_SESSION['cart'])){
     $ct=count($excludeIds);
     for($i=0;$i<$ct;$i++){
         $in[]='?';
-    }    
+
+
+    }
     $in=implode(', ',$in);
     $sql2='SELECT * FROM products WHERE id  IN (' . $in . ')';
     $stmt = $pdo->prepare($sql2, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
